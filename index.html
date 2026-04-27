@@ -31,84 +31,63 @@
             --shadow-sm: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
         }
 
-        /* header / hero with Soweto image as visible banner */
+        /* HEADER / HERO with Soweto Orlando Towers background image */
         .hero {
             position: relative;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.6));
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.75)), url('Soweto_orlandotowers.jpg');
+            background-size: cover;
+            background-position: center 35%;
+            background-repeat: no-repeat;
             color: white;
-            padding: 2rem 1.5rem 2rem 1.5rem;
+            padding: 3.5rem 1.5rem 4rem 1.5rem;
             text-align: center;
-            border-bottom-left-radius: 2rem;
-            border-bottom-right-radius: 2rem;
+            border-bottom-left-radius: 2.5rem;
+            border-bottom-right-radius: 2.5rem;
             overflow: hidden;
+            box-shadow: 0 15px 30px -12px rgba(0, 0, 0, 0.3);
         }
 
-        /* Featured image section - Soweto aerial photo */
-        .featured-image {
+        /* subtle animated overlay texture */
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            max-width: 1200px;
-            margin: -1rem auto 0 auto;
-            border-radius: 1.5rem;
-            overflow: hidden;
-            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.3);
-            border: 3px solid var(--gold-mzansi);
-            position: relative;
-            background: #2c1a0c;
-        }
-        
-        .featured-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.3s ease;
-        }
-        
-        .featured-image:hover img {
-            transform: scale(1.02);
-        }
-        
-        .image-caption {
-            background: rgba(0,0,0,0.7);
-            color: #f5b042;
-            padding: 0.5rem;
-            text-align: center;
-            font-size: 0.8rem;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-        }
-        
-        .image-caption i {
-            margin-right: 6px;
+            height: 100%;
+            background: radial-gradient(circle at 20% 40%, rgba(230, 92, 30, 0.2), transparent 70%);
+            pointer-events: none;
+            z-index: 1;
         }
 
         .hero-content {
             position: relative;
-            z-index: 2;
-            padding: 1rem 0 1.5rem 0;
+            z-index: 3;
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.3rem;
             font-weight: 800;
             letter-spacing: -0.02em;
-            background: linear-gradient(135deg, #FFB347, #FF7E3A);
+            background: linear-gradient(135deg, #FFC857, #FF8C42);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
             margin-bottom: 0.5rem;
         }
 
         .hero-tag {
             font-size: 1.2rem;
             font-weight: 500;
-            background: rgba(0, 0, 0, 0.65);
-            backdrop-filter: blur(4px);
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
             display: inline-block;
-            padding: 0.5rem 1.4rem;
+            padding: 0.6rem 1.6rem;
             border-radius: 60px;
-            margin-top: 0.5rem;
-            border: 1px solid rgba(245, 176, 66, 0.6);
+            margin-top: 0.8rem;
+            border: 1px solid rgba(245, 176, 66, 0.7);
+            letter-spacing: 0.3px;
         }
 
         .cta-button {
@@ -116,21 +95,38 @@
             border: none;
             color: #2c1a0c;
             font-weight: 700;
-            padding: 0.8rem 2rem;
-            border-radius: 40px;
-            font-size: 1rem;
-            margin-top: 1.5rem;
+            padding: 0.85rem 2.2rem;
+            border-radius: 50px;
+            font-size: 1.05rem;
+            margin-top: 1.8rem;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            transition: transform 0.2s, background 0.2s;
-            box-shadow: var(--shadow-sm);
+            gap: 12px;
+            transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
             cursor: pointer;
         }
 
         .cta-button:hover {
-            background: #ffa74e;
+            background: #ffaa55;
             transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* photo credit overlay (subtle) */
+        .photo-credit {
+            position: absolute;
+            bottom: 12px;
+            right: 18px;
+            font-size: 0.65rem;
+            background: rgba(0,0,0,0.55);
+            color: #f0c48b;
+            padding: 3px 10px;
+            border-radius: 30px;
+            backdrop-filter: blur(3px);
+            pointer-events: none;
+            z-index: 4;
+            font-family: monospace;
         }
 
         /* main container */
@@ -325,6 +321,12 @@
             align-items: center;
             gap: 10px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: all 0.2s;
+        }
+
+        .order-now:hover {
+            background: #cf4a22;
+            transform: scale(1.02);
         }
 
         footer {
@@ -348,9 +350,9 @@
             .contact-info {
                 justify-content: center;
             }
-            .featured-image {
-                margin-top: 0;
-                border-radius: 1rem;
+            .hero {
+                padding: 2rem 1rem 2.5rem;
+                background-position: center 30%;
             }
         }
         
@@ -364,18 +366,26 @@
         }
         
         .welcome-badge {
-            background: rgba(245, 176, 66, 0.2);
-            border-left: 4px solid var(--gold-mzansi);
-            padding: 0.8rem 1.2rem;
-            margin-bottom: 1.5rem;
+            background: linear-gradient(95deg, #fff3e6, #fff8ef);
+            border-left: 5px solid var(--gold-mzansi);
+            padding: 0.9rem 1.2rem;
+            margin-bottom: 2rem;
             border-radius: 1rem;
             font-weight: 500;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        .featured-orlando {
+            background: #2c1a0c0c;
+            border-radius: 1rem;
         }
     </style>
 </head>
 <body>
 
+<!-- HERO WITH SOWETO ORLANDO TOWERS BACKGROUND IMAGE -->
 <div class="hero">
+    <div class="photo-credit">📸 Orlando Towers, Soweto | The spirit of Mzansi</div>
     <div class="hero-content">
         <h1>🔥 MZANSI DELIGHTS 🔥</h1>
         <div class="hero-tag">
@@ -389,27 +399,15 @@
     </div>
 </div>
 
-<!-- VISIBLE SOWETO AERIAL IMAGE - Featured prominently -->
-<div class="container" style="padding-top: 0; margin-top: -1rem;">
-    <div class="featured-image">
-        <img src="soweto-south-africa-1325-aerial-260nw-2567394239.webp" 
-             alt="Aerial view of Soweto, South Africa - vibrant township landscape" 
-             onerror="this.onerror=null; this.src='https://via.placeholder.com/1200x600?text=Soweto+Aerial+View';">
-        <div class="image-caption">
-            <i class="fas fa-map-marker-alt"></i> SOWETO • THE HEART OF MZANSI | WHERE FLAVOURS COME ALIVE
-        </div>
-    </div>
-</div>
-
 <div class="container">
-    <!-- Welcome message -->
+    <!-- Welcome message with local pride -->
     <div class="welcome-badge">
-        <i class="fas fa-heart" style="color: #e65c1e;"></i> Welcome to Mzansi Delights — Where every meal tells a story of heritage, fire, and community. From our braai to your soul.
+        <i class="fas fa-heart" style="color: #e65c1e;"></i> <strong>Soweto's Finest Eatery</strong> — From the iconic Orlando Towers to your plate, we serve heritage, smoke, and soul. Every meal is a celebration of Mzansi.
     </div>
     
-    <!-- full menu split into original vibe exactly from image: Grilled meats, stews, street meals, fried chicken, sides etc -->
+    <!-- full menu split exactly from original image -->
     <div class="menu-grid">
-        <!-- Left block: GRILLED MEATS + STEWS + STREET MEALS (RABAI staples) -->
+        <!-- GRILLED MEATS (RABAI STAPLES) -->
         <div class="menu-card">
             <div class="card-header">
                 <h3><i class="fas fa-fire"></i> GRILLED MEATS <span class="inline-tag">RABAI STAPLES</span></h3>
@@ -517,14 +515,14 @@
         </div>
     </div>
 
-    <!-- additional quick items like "Family meals / combos" from the menu picture also displayed fully -->
+    <!-- additional quick items like "Family meals / combos" from the menu picture -->
     <div style="display: flex; flex-wrap: wrap; gap: 1.2rem; justify-content: space-between; background: #FFF4E8; border-radius: 2rem; padding: 1.5rem; margin: 1rem 0;">
         <div><i class="fas fa-thumbs-up" style="color:#d45a1c;"></i> <strong>🔥 FAMILY DEAL:</strong> Full grilled chicken + large pap + green salad + 2L soda — R199</div>
         <div><i class="fas fa-fire" style="color:#d45a1c;"></i> <strong>KOTA SPECIAL:</strong> Quarter loaf, double cheese, russian, chips & atchaar</div>
         <div><i class="fas fa-mug-saucer"></i> <strong>Sunday stew:</strong> Mogodu & pap with bone broth</div>
     </div>
 
-    <!-- contact exactly as per image: phone, facebook handle -->
+    <!-- contact exactly as per original brief -->
     <div class="contact-footer">
         <div class="contact-info">
             <div><i class="fas fa-phone-alt"></i> <a href="tel:+27234567890">+27 23 456 7890</a></div>
@@ -540,18 +538,17 @@
 
     <footer>
         <p>© 2025 Mzansi Delights — Taste of the townships, braai flavour & warm heritage. All orders fresh on demand.</p>
-        <p style="margin-top: 0.5rem;">📍 Located in Soweto & Cape Flats | Open Mon-Sun 11am - 9pm</p>
+        <p style="margin-top: 0.5rem;">📍 Located in Soweto & Cape Flats | Open Mon-Sun 11am - 9pm | Orlando Towers landmark</p>
     </footer>
 </div>
 
 <script>
-    // order now functionality from both hero and footer button, plus whatsapp integration
+    // order now functionality from hero and footer, plus WhatsApp integration
     const orderBtnHero = document.getElementById('orderHeroBtn');
     const orderFooterBtn = document.getElementById('orderFooterBtn');
     const whatsappBtn = document.getElementById('whatsappOrderBtn');
     const fakeFb = document.getElementById('fbLink');
 
-    // open order prompt with whatsapp/call option
     function openOrderPrompt() {
         const userConfirmed = confirm("📞 Connect with Mzansi Delights!\n\nCall us: +27 23 456 7890\nOr click OK to send WhatsApp message (draft).\n\nGet your order: Grilled meats, Kota, stews & more 🔥");
         if (userConfirmed) {
@@ -559,7 +556,6 @@
         }
     }
 
-    // direct whatsapp order link
     function directWhatsapp() {
         window.open("https://wa.me/27234567890?text=Hi%20Mzansi%20Delights!%20I%20want%20to%20order%20Kota%20and%20Fried%20Chicken%20buckets%20%F0%9F%8D%97%20Please%20send%20menu.", "_blank");
     }
@@ -568,7 +564,6 @@
     orderFooterBtn.addEventListener('click', openOrderPrompt);
     whatsappBtn.addEventListener('click', directWhatsapp);
 
-    // Facebook link interactive
     if (fakeFb) {
         fakeFb.addEventListener('click', (e) => {
             e.preventDefault();
@@ -577,7 +572,6 @@
         });
     }
 
-    // messenger icon demo interaction
     const messengerIcon = document.querySelector('.fa-facebook-messenger');
     if(messengerIcon) {
         messengerIcon.addEventListener('click', () => {
@@ -585,7 +579,7 @@
         });
     }
 
-    // menu hover effect
+    // hover polish for menu items
     const allMenuItems = document.querySelectorAll('.menu-list li');
     allMenuItems.forEach(item => {
         item.addEventListener('mouseenter', () => {
@@ -600,7 +594,7 @@
         });
     });
 
-    // button press effect
+    // add dynamic style for buttons
     const stylePress = document.createElement('style');
     stylePress.textContent = `
         .order-now, .cta-button {
@@ -612,7 +606,7 @@
     `;
     document.head.appendChild(stylePress);
     
-    console.log("Mzansi Delights — Soweto aerial image displayed prominently");
+    console.log("Mzansi Delights — Hero background now features Soweto Orlando Towers! 🇿🇦");
 </script>
 </body>
 </html>
