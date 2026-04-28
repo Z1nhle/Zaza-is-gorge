@@ -1,0 +1,70 @@
+mzansi-delights-website/
+│
+├── index.html                    # Homepage (main landing page)
+├── menu.html                     # Full menu page with prices & order cart
+├── about.html                    # About us / story page
+├── contact.html                  # Contact & location page
+├── order-success.html            # Order confirmation page
+│
+├── assets/
+│   ├── css/
+│   │   ├── main.css             # Global styles shared across pages
+│   │   ├── menu.css             # Menu page specific styles
+│   │   └── responsive.css       # Mobile responsive overrides
+│   │
+│   ├── js/
+│   │   ├── main.js              # Global JS (nav, footer, shared functions)
+│   │   ├── cart.js              # Shopping cart logic (used on menu.html)
+│   │   ├── order.js             # Order processing & WhatsApp integration
+│   │   └── contact.js           # Contact form validation & map
+│   │
+│   ├── images/
+│   │   ├── hero-bg.jpg          # Soweto Orlando Towers background
+│   │   ├── soweto-aerial.webp   # Aerial photo of Soweto
+│   │   ├── logo.png             # Mzansi Delights logo
+│   │   ├── food/
+│   │   │   ├── grilled-meats.jpg
+│   │   │   ├── kota.jpg
+│   │   │   ├── stew.jpg
+│   │   │   ├── chicken-bucket.jpg
+│   │   │   └── sides.jpg
+│   │   ├── icons/
+│   │   │   ├── braai-icon.svg
+│   │   │   ├── beer-icon.svg
+│   │   │   └── location-icon.svg
+│   │   └── team/
+│   │       ├── chef.jpg
+│   │       └── staff.jpg
+│   │
+│   ├── fonts/
+│   │   └── (custom font files if needed)
+│   │
+│   └── data/
+│       └── menu-data.json       # Centralized menu items with prices
+│
+├── pages/
+│   ├── specials.html            # Weekly specials & promotions
+│   ├── catering.html            # Catering services page
+│   ├── gallery.html             # Photo gallery of food & events
+│   ├── reviews.html             # Customer testimonials
+│   └── faq.html                 # Frequently asked questions
+│
+├── components/
+│   ├── header.html              # Reusable header component
+│   ├── footer.html              # Reusable footer component
+│   └── navigation.html          # Navigation bar component
+│
+├── backend/                     (if adding server-side features later)
+│   ├── api/
+│   │   ├── submit-order.php     # PHP endpoint for orders
+│   │   ├── contact-form.php     # Process contact form
+│   │   └── get-menu.php         # Fetch menu JSON
+│   ├── config/
+│   │   └── database.php         # Database config (future)
+│   └── logs/
+│       └── orders.log           # Order logs
+│
+├── .gitignore                   # Git ignore file
+├── README.md                    # Project documentation
+├── LICENSE                      # MIT or other license
+└── robots.txt                   # SEO directives
