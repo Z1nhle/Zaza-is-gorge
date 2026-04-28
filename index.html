@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Mzansi Delights | Authentic South African Braai & Township Eats</title>
-    <!-- Google Fonts & simple reset -->
+    <title>Get Your Order Now | Mzansi Delights Full Menu with Prices</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -16,597 +15,618 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #fef7e8;
+            background: #fef3e2;
             color: #2c1a0c;
-            scroll-behavior: smooth;
         }
 
-        /* warm earthy / township vibe */
-        :root {
-            --flame-orange: #e65c1e;
-            --deep-red: #b83b1a;
-            --gold-mzansi: #f5b042;
-            --charcoal: #2e241f;
-            --cream: #fff6ea;
-            --shadow-sm: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
-        }
-
-        /* HEADER / HERO with Soweto Orlando Towers background image */
-        .hero {
-            position: relative;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.75)), url('Soweto_orlandotowers.jpg');
+        /* Header with Orlando Towers */
+        .order-header {
+            background: linear-gradient(135deg, #1f1409, #2c1a0c), url('Soweto_orlandotowers.jpg');
             background-size: cover;
             background-position: center 35%;
-            background-repeat: no-repeat;
+            background-blend-mode: overlay;
             color: white;
-            padding: 3.5rem 1.5rem 4rem 1.5rem;
+            padding: 2rem 1.5rem;
             text-align: center;
-            border-bottom-left-radius: 2.5rem;
-            border-bottom-right-radius: 2.5rem;
-            overflow: hidden;
-            box-shadow: 0 15px 30px -12px rgba(0, 0, 0, 0.3);
-        }
-
-        /* subtle animated overlay texture */
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 20% 40%, rgba(230, 92, 30, 0.2), transparent 70%);
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .hero-content {
+            border-bottom-left-radius: 2rem;
+            border-bottom-right-radius: 2rem;
+            margin-bottom: 1.5rem;
             position: relative;
-            z-index: 3;
         }
 
-        .hero h1 {
-            font-size: 3.3rem;
+        .order-header h1 {
+            font-size: 2.5rem;
             font-weight: 800;
-            letter-spacing: -0.02em;
             background: linear-gradient(135deg, #FFC857, #FF8C42);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
-            margin-bottom: 0.5rem;
         }
 
-        .hero-tag {
-            font-size: 1.2rem;
-            font-weight: 500;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(5px);
-            display: inline-block;
-            padding: 0.6rem 1.6rem;
-            border-radius: 60px;
-            margin-top: 0.8rem;
-            border: 1px solid rgba(245, 176, 66, 0.7);
-            letter-spacing: 0.3px;
-        }
-
-        .cta-button {
-            background: var(--gold-mzansi);
+        .back-home {
+            background: rgba(255,255,240,0.2);
             border: none;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            color: white;
+            font-weight: 600;
+            margin-top: 1rem;
+            cursor: pointer;
+            transition: 0.2s;
+            backdrop-filter: blur(4px);
+        }
+
+        .back-home:hover {
+            background: #f5b042;
             color: #2c1a0c;
-            font-weight: 700;
-            padding: 0.85rem 2.2rem;
-            border-radius: 50px;
-            font-size: 1.05rem;
-            margin-top: 1.8rem;
-            display: inline-flex;
+        }
+
+        .container-order {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1.5rem 2rem;
+        }
+
+        /* Category sections */
+        .category-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .category-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            border-left: 7px solid #e65c1e;
+            padding-left: 1rem;
+            margin: 1.5rem 0 1.2rem 0;
+            color: #2e241f;
+            display: flex;
             align-items: center;
             gap: 12px;
-            transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
-            cursor: pointer;
         }
 
-        .cta-button:hover {
-            background: #ffaa55;
-            transform: scale(1.02);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        /* photo credit overlay (subtle) */
-        .photo-credit {
-            position: absolute;
-            bottom: 12px;
-            right: 18px;
-            font-size: 0.65rem;
-            background: rgba(0,0,0,0.55);
-            color: #f0c48b;
-            padding: 3px 10px;
-            border-radius: 30px;
-            backdrop-filter: blur(3px);
-            pointer-events: none;
-            z-index: 4;
-            font-family: monospace;
-        }
-
-        /* main container */
-        .container {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem;
-        }
-
-        /* section titles */
-        .section-title {
-            font-size: 1.9rem;
-            font-weight: 800;
-            border-left: 8px solid var(--flame-orange);
-            padding-left: 1rem;
-            margin-bottom: 1.8rem;
-            margin-top: 1rem;
-            color: #2e241f;
-        }
-
-        /* menu cards grid */
-        .menu-grid {
+        .menu-grid-order {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .menu-card {
-            background: white;
-            border-radius: 2rem;
-            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: all 0.2s ease;
-            border: 1px solid #ffe1b9;
-        }
-
-        .menu-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 35px -12px rgba(0, 0, 0, 0.2);
-        }
-
-        .card-header {
-            background: #ffe6cf;
-            padding: 1rem 1.5rem;
-            border-bottom: 2px solid #f5b042;
-        }
-
-        .card-header h3 {
-            font-size: 1.6rem;
-            font-weight: 800;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #b34117;
-        }
-
-        .menu-list {
-            padding: 1.2rem 1.5rem 1.8rem;
-            list-style: none;
-        }
-
-        .menu-list li {
-            padding: 0.65rem 0;
-            border-bottom: 1px dashed #f3e1ca;
-            display: flex;
-            align-items: baseline;
-            gap: 8px;
-            font-weight: 500;
-        }
-
-        .menu-list li i {
-            color: #e76f2d;
-            width: 22px;
-            font-size: 0.9rem;
-        }
-
-        .badge {
-            background: #fbead4;
-            color: #aa461c;
-            font-size: 0.7rem;
-            font-weight: 700;
-            padding: 0.2rem 0.6rem;
-            border-radius: 30px;
-            margin-left: 8px;
-        }
-
-        .price-note {
-            font-size: 0.75rem;
-            color: #7f5a3a;
-            margin-top: 12px;
-            font-style: italic;
-        }
-
-        /* drinks / snacks */
-        .drinks-snacks {
-            background: #ffffffde;
-            border-radius: 2rem;
-            padding: 1.6rem;
-            margin: 2rem 0 2rem;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid #ffdfb3;
-        }
-
-        .row-cols {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: space-between;
-        }
-
-        .drinks-col {
-            flex: 1;
-            min-width: 180px;
-        }
-
-        .drinks-col h4 {
-            font-size: 1.35rem;
-            font-weight: 700;
-            border-left: 4px solid var(--flame-orange);
-            padding-left: 12px;
-            margin-bottom: 1rem;
-        }
-
-        .drinks-col ul {
-            list-style: none;
-        }
-
-        .drinks-col li {
-            margin: 8px 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .contact-footer {
-            background: #2c1a0c;
-            color: #ffefdb;
-            border-radius: 2rem;
-            padding: 2rem;
-            margin-top: 2rem;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 1.5rem;
         }
 
-        .contact-info {
+        .menu-item {
+            background: white;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.25s ease;
+            border: 1px solid #ffe0bd;
             display: flex;
-            gap: 2rem;
+            flex-direction: column;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .item-info {
+            padding: 1rem 1.2rem;
+            flex: 1;
+        }
+
+        .item-name {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #b34117;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
             flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 0.4rem;
         }
 
-        .contact-info a {
-            color: #f5b042;
-            text-decoration: none;
-            font-weight: 500;
-            transition: 0.2s;
-        }
-
-        .contact-info a:hover {
-            color: white;
-        }
-
-        .social-icons {
-            font-size: 1.8rem;
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-icons i {
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        .social-icons i:hover {
-            color: var(--gold-mzansi);
-            transform: scale(1.1);
-        }
-
-        .order-now {
-            background: var(--deep-red);
-            color: white;
-            border: none;
-            padding: 0.8rem 1.9rem;
-            border-radius: 60px;
-            font-weight: bold;
+        .item-price {
+            background: #e65c1e20;
+            padding: 0.2rem 0.7rem;
+            border-radius: 50px;
             font-size: 1rem;
-            cursor: pointer;
+            color: #c23d0a;
+            font-weight: 700;
+        }
+
+        .item-desc {
+            font-size: 0.8rem;
+            color: #6b4c33;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .add-btn {
+            background: #f5b042;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 0.85rem;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            gap: 8px;
+            cursor: pointer;
             transition: all 0.2s;
+            color: #2c1a0c;
+            width: 100%;
+            justify-content: center;
         }
 
-        .order-now:hover {
-            background: #cf4a22;
-            transform: scale(1.02);
+        .add-btn:hover {
+            background: #e69b2e;
+            transform: scale(0.98);
+        }
+
+        /* Shopping Cart Sidebar */
+        .cart-sidebar {
+            background: white;
+            border-radius: 1.8rem;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            border: 2px solid #ffdbb5;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            position: sticky;
+            bottom: 0;
+            z-index: 100;
+        }
+
+        .cart-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 2px dashed #ffcb8a;
+            padding-bottom: 0.7rem;
+            margin-bottom: 1rem;
+        }
+
+        .cart-items-list {
+            max-height: 280px;
+            overflow-y: auto;
+            margin-bottom: 1rem;
+        }
+
+        .cart-item-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.7rem 0;
+            border-bottom: 1px solid #f1e0ce;
+        }
+
+        .cart-item-details {
+            flex: 2;
+        }
+
+        .cart-item-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .cart-item-price {
+            font-size: 0.75rem;
+            color: #e65c1e;
+        }
+
+        .cart-item-controls {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .qty-btn {
+            background: #f5e1ca;
+            border: none;
+            width: 28px;
+            height: 28px;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.1s;
+        }
+
+        .cart-qty {
+            font-weight: 700;
+            min-width: 28px;
+            text-align: center;
+        }
+
+        .remove-item-btn {
+            background: none;
+            border: none;
+            color: #c25d2c;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-left: 6px;
+        }
+
+        .cart-total {
+            font-size: 1.3rem;
+            font-weight: 800;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.8rem;
+            padding-top: 0.8rem;
+            border-top: 2px solid #ffd7a5;
+        }
+
+        .whatsapp-order {
+            background: #25D366;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 1rem;
+            border-radius: 60px;
+            font-weight: 800;
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: 0.2s;
+            font-size: 1rem;
+        }
+
+        .whatsapp-order:hover {
+            background: #1da15a;
+            transform: scale(1.01);
+        }
+
+        .empty-cart-msg {
+            text-align: center;
+            color: #9b7b60;
+            padding: 1rem;
         }
 
         footer {
             text-align: center;
             padding: 2rem 1rem 1rem;
-            font-size: 0.8rem;
-            color: #5c402b;
+            font-size: 0.75rem;
+            color: #886e54;
         }
 
-        @media (max-width: 700px) {
-            .hero h1 {
-                font-size: 2.2rem;
+        @media (max-width: 768px) {
+            .menu-grid-order {
+                grid-template-columns: 1fr;
             }
-            .section-title {
-                font-size: 1.6rem;
-            }
-            .contact-footer {
-                flex-direction: column;
-                text-align: center;
-            }
-            .contact-info {
-                justify-content: center;
-            }
-            .hero {
-                padding: 2rem 1rem 2.5rem;
-                background-position: center 30%;
+            .category-title {
+                font-size: 1.4rem;
             }
         }
-        
-        .inline-tag {
-            background-color: #ffeedd;
+
+        .badge-popular {
+            background: #e65c1e;
+            color: white;
+            font-size: 0.6rem;
+            padding: 0.2rem 0.6rem;
             border-radius: 20px;
-            padding: 0.1rem 0.5rem;
-            font-size: 0.7rem;
-            font-weight: 600;
-            color: #c25d2c;
-        }
-        
-        .welcome-badge {
-            background: linear-gradient(95deg, #fff3e6, #fff8ef);
-            border-left: 5px solid var(--gold-mzansi);
-            padding: 0.9rem 1.2rem;
-            margin-bottom: 2rem;
-            border-radius: 1rem;
-            font-weight: 500;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-        }
-
-        .featured-orlando {
-            background: #2c1a0c0c;
-            border-radius: 1rem;
+            margin-left: 8px;
         }
     </style>
 </head>
 <body>
 
-<!-- HERO WITH SOWETO ORLANDO TOWERS BACKGROUND IMAGE -->
-<div class="hero">
-    <div class="photo-credit">📸 Orlando Towers, Soweto | The spirit of Mzansi</div>
-    <div class="hero-content">
-        <h1>🔥 MZANSI DELIGHTS 🔥</h1>
-        <div class="hero-tag">
-            <i class="fas fa-utensils"></i> Authentic Braai • Township Flava • Rabai Staples
-        </div>
-        <div>
-            <button class="cta-button" id="orderHeroBtn">
-                <i class="fas fa-shopping-cart"></i> GET YOUR ORDER NOW!
-            </button>
-        </div>
-    </div>
+<div class="order-header">
+    <h1>🍽️ GET YOUR ORDER NOW! 🍽️</h1>
+    <p><i class="fas fa-map-marker-alt"></i> Soweto – Orlando Towers | Full Menu with Prices | Add to Cart & WhatsApp Order</p>
+    <button class="back-home" id="backToHomeBtn"><i class="fas fa-arrow-left"></i> Back to Homepage</button>
 </div>
 
-<div class="container">
-    <!-- Welcome message with local pride -->
-    <div class="welcome-badge">
-        <i class="fas fa-heart" style="color: #e65c1e;"></i> <strong>Soweto's Finest Eatery</strong> — From the iconic Orlando Towers to your plate, we serve heritage, smoke, and soul. Every meal is a celebration of Mzansi.
-    </div>
-    
-    <!-- full menu split exactly from original image -->
-    <div class="menu-grid">
-        <!-- GRILLED MEATS (RABAI STAPLES) -->
-        <div class="menu-card">
-            <div class="card-header">
-                <h3><i class="fas fa-fire"></i> GRILLED MEATS <span class="inline-tag">RABAI STAPLES</span></h3>
-            </div>
-            <ul class="menu-list">
-                <li><i class="fas fa-drumstick-bite"></i> Beef + Bone, Short Rib, Brisket, Chuck, Steak</li>
-                <li><i class="fas fa-sausage"></i> Boerewors (Traditional Sausage) <span class="badge">House special</span></li>
-                <li><i class="fas fa-pork"></i> Pork Chops, Ribs & Leg Chops</li>
-                <li><i class="fas fa-hen"></i> Chicken Pieces (Quarter, Half, Full Grilled Chicken)</li>
-            </ul>
-        </div>
-
-        <!-- STEWS & TRADITIONAL PLATES -->
-        <div class="menu-card">
-            <div class="card-header">
-                <h3><i class="fas fa-mug-hot"></i> Stews & Traditional Plates</h3>
-            </div>
-            <ul class="menu-list">
-                <li><i class="fas fa-bowl-food"></i> Beef Stew with a pair of rice</li>
-                <li><i class="fas fa-bowl-food"></i> Chicken Stew with Pap</li>
-                <li><i class="fas fa-bowl-food"></i> Wors Stew</li>
-                <li><i class="fas fa-egg"></i> Mogodu (tripe) with Pap</li>
-                <li><i class="fas fa-pasta"></i> Macaroni & Mince Stew</li>
-                <li><i class="fas fa-paw"></i> Grizzly or Brotho (Chicken Feet) Stew</li>
-            </ul>
-        </div>
-
-        <!-- ONION STREET MEALS & KOTA / BURGERS -->
-        <div class="menu-card">
-            <div class="card-header">
-                <h3><i class="fas fa-truck-fast"></i> Onion Street Meals</h3>
-            </div>
-            <ul class="menu-list">
-                <li><i class="fas fa-fries"></i> Russian & Chips <span class="badge">Classic Township Combo</span></li>
-                <li><i class="fas fa-fries"></i> Viennas & Chips</li>
-                <li><i class="fas fa-hotdog"></i> Wors Rolls</li>
-                <li><i class="fas fa-burger"></i> Darwooq Burgers (Layered Sandwiches)</li>
-                <li><i class="fas fa-bread-slice"></i> Kota (Quarter loaf stuffed with chips, polony, cheese, sauces)</li>
-            </ul>
-            <div class="price-note" style="padding-left:1.5rem; padding-bottom:1rem;">
-                <i class="fas fa-star-of-life"></i> Spice it up with extra chakalaka!
-            </div>
-        </div>
-
-        <!-- FRIED & GRILLED CHICKEN + BUCKETS -->
-        <div class="menu-card">
-            <div class="card-header">
-                <h3><i class="fas fa-drumstick"></i> Fried & Grilled Chicken</h3>
-            </div>
-            <ul class="menu-list">
-                <li><i class="fas fa-bucket"></i> Fried Chicken Buckets (2pc, 5pc, 6pc, etc.)</li>
-                <li><i class="fas fa-wing"></i> Chicken Wings with Pap or Chips</li>
-                <li><i class="fas fa-users"></i> Family Meals: Full Chicken + Pap + Salad + 2L Cone</li>
-            </ul>
-        </div>
-
-        <!-- SIDES & SALADS section -->
-        <div class="menu-card">
-            <div class="card-header">
-                <h3><i class="fas fa-leaf"></i> Sides & Salads</h3>
-            </div>
-            <ul class="menu-list">
-                <li><i class="fas fa-mound"></i> Pap (Regular or Large)</li>
-                <li><i class="fas fa-fries"></i> Chips (Small, Medium, Large)</li>
-                <li><i class="fas fa-pepper-hot"></i> Chakalaka (Spicy Vegetable Relish)</li>
-                <li><i class="fas fa-seedling"></i> Spinach</li>
-                <li><i class="fas fa-potato"></i> Potato Salad</li>
-                <li><i class="fas fa-cabbage"></i> Coleslaw</li>
-                <li><i class="fas fa-salad"></i> Green Salad</li>
-            </ul>
-        </div>
+<div class="container-order">
+    <!-- GRILLED MEATS -->
+    <div class="category-section">
+        <div class="category-title"><i class="fas fa-fire"></i> GRILLED MEATS (Rabai Staples)</div>
+        <div class="menu-grid-order" id="grilledGrid"></div>
     </div>
 
-    <!-- Mzansi Drinks & Beer & Cigars section exactly from image -->
-    <div class="drinks-snacks">
-        <h3 style="font-size: 1.7rem; font-weight:800; margin-bottom: 1rem;"><i class="fas fa-glass-cheers"></i> DINING & REFRESHMENTS</h3>
-        <div class="row-cols">
-            <div class="drinks-col">
-                <h4><i class="fas fa-wine-bottle"></i> Soft Drinks</h4>
-                <ul>
-                    <li><i class="fab fa-codepen"></i> Coke</li>
-                    <li><i class="fas fa-cube"></i> Sprite</li>
-                    <li><i class="fas fa-apple-alt"></i> Stoney Ginger Beer</li>
-                    <li><i class="fas fa-tint"></i> Mineral Water</li>
-                </ul>
-            </div>
-            <div class="drinks-col">
-                <h4><i class="fas fa-beer-mug"></i> Local Beers</h4>
-                <ul>
-                    <li><i class="fas fa-beer"></i> Castle Lite</li>
-                    <li><i class="fas fa-beer"></i> Carling Black Label</li>
-                    <li><i class="fas fa-beer"></i> Heineken</li>
-                </ul>
-            </div>
-            <div class="drinks-col">
-                <h4><i class="fas fa-smoking"></i> Cigars & Specials</h4>
-                <ul>
-                    <li><i class="fas fa-cigar"></i> Carina BYL</li>
-                    <li><i class="fas fa-fish"></i> Flynn Fish</li>
-                </ul>
-            </div>
-        </div>
-        <div style="margin-top: 1.4rem; font-size:0.9rem; background:#FFF2E4; border-radius: 2rem; padding: 0.6rem 1rem; text-align: center;">
-            <i class="fas fa-check-circle" style="color:#e65c1e;"></i> Ask for our ‘Sunday special’ — half grilled chicken with pap & chakalaka!
-        </div>
+    <!-- STEWS -->
+    <div class="category-section">
+        <div class="category-title"><i class="fas fa-mug-hot"></i> STEWS & TRADITIONAL PLATES</div>
+        <div class="menu-grid-order" id="stewGrid"></div>
     </div>
 
-    <!-- additional quick items like "Family meals / combos" from the menu picture -->
-    <div style="display: flex; flex-wrap: wrap; gap: 1.2rem; justify-content: space-between; background: #FFF4E8; border-radius: 2rem; padding: 1.5rem; margin: 1rem 0;">
-        <div><i class="fas fa-thumbs-up" style="color:#d45a1c;"></i> <strong>🔥 FAMILY DEAL:</strong> Full grilled chicken + large pap + green salad + 2L soda — R199</div>
-        <div><i class="fas fa-fire" style="color:#d45a1c;"></i> <strong>KOTA SPECIAL:</strong> Quarter loaf, double cheese, russian, chips & atchaar</div>
-        <div><i class="fas fa-mug-saucer"></i> <strong>Sunday stew:</strong> Mogodu & pap with bone broth</div>
+    <!-- STREET EATS -->
+    <div class="category-section">
+        <div class="category-title"><i class="fas fa-truck-fast"></i> STREET EATS & KOTA SPECIALS</div>
+        <div class="menu-grid-order" id="streetGrid"></div>
     </div>
 
-    <!-- contact exactly as per original brief -->
-    <div class="contact-footer">
-        <div class="contact-info">
-            <div><i class="fas fa-phone-alt"></i> <a href="tel:+27234567890">+27 23 456 7890</a></div>
-            <div><i class="fab fa-facebook"></i> <a href="#" id="fbLink">facebook.com/mzansidelights</a></div>
-            <div><i class="fab fa-instagram"></i> <a href="#">@mzansi_delights</a></div>
+    <!-- FRIED & GRILLED CHICKEN -->
+    <div class="category-section">
+        <div class="category-title"><i class="fas fa-drumstick"></i> FRIED & GRILLED CHICKEN</div>
+        <div class="menu-grid-order" id="chickenGrid"></div>
+    </div>
+
+    <!-- SIDES -->
+    <div class="category-section">
+        <div class="category-title"><i class="fas fa-leaf"></i> SIDES & SALADS</div>
+        <div class="menu-grid-order" id="sidesGrid"></div>
+    </div>
+
+    <!-- DRINKS & BEVERAGES -->
+    <div class="category-section">
+        <div class="category-title"><i class="fas fa-glass-cheers"></i> DRINKS & BEVERAGES</div>
+        <div class="menu-grid-order" id="drinksGrid"></div>
+    </div>
+
+    <!-- SHOPPING CART SECTION -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-title">
+            <i class="fas fa-shopping-basket"></i> Your Order Cart
+            <span style="font-size: 0.8rem; background:#f5b04220; padding:0.2rem 0.7rem; border-radius:30px;" id="cartItemCount">0 items</span>
         </div>
-        <div class="social-icons">
-            <i class="fab fa-whatsapp" style="color:#25D366;" id="whatsappOrderBtn"></i>
-            <i class="fab fa-facebook-messenger" style="color:#0084ff;"></i>
+        <div id="cartItemsContainer" class="cart-items-list">
+            <div class="empty-cart-msg"><i class="fas fa-utensils"></i> Cart is empty. Add delicious Mzansi dishes!</div>
         </div>
-        <button class="order-now" id="orderFooterBtn"><i class="fas fa-motorcycle"></i> Order Now</button>
+        <div class="cart-total">
+            <span>Total Amount:</span>
+            <span id="cartTotalAmount">R0.00</span>
+        </div>
+        <button class="whatsapp-order" id="whatsappCheckoutBtn">
+            <i class="fab fa-whatsapp"></i> ORDER VIA WHATSAPP
+        </button>
+        <p style="font-size: 0.7rem; text-align:center; margin-top:0.8rem;">✅ Prices include VAT | Add items & click order</p>
     </div>
 
     <footer>
-        <p>© 2025 Mzansi Delights — Taste of the townships, braai flavour & warm heritage. All orders fresh on demand.</p>
-        <p style="margin-top: 0.5rem;">📍 Located in Soweto & Cape Flats | Open Mon-Sun 11am - 9pm | Orlando Towers landmark</p>
+        <p>🇿🇦 Mzansi Delights — Real Braai, Real Township Vibe | Call +27 23 456 7890 for large bookings</p>
     </footer>
 </div>
 
 <script>
-    // order now functionality from hero and footer, plus WhatsApp integration
-    const orderBtnHero = document.getElementById('orderHeroBtn');
-    const orderFooterBtn = document.getElementById('orderFooterBtn');
-    const whatsappBtn = document.getElementById('whatsappOrderBtn');
-    const fakeFb = document.getElementById('fbLink');
+    // ------------------- FULL MENU DATABASE WITH PRICES -------------------
+    const fullMenu = {
+        grilled: [
+            { id: "g1", name: "Beef Short Rib (grilled)", price: 89, desc: "Tender beef rib, smoky braai glaze", popular: true },
+            { id: "g2", name: "Brisket & Chakalaka", price: 99, desc: "Slow-cooked brisket with spicy relish", popular: true },
+            { id: "g3", name: "Boerewors Roll", price: 45, desc: "Traditional sausage, soft roll, onion relish" },
+            { id: "g4", name: "Pork Chops (2 pieces)", price: 79, desc: "Grilled with peri-peri rub" },
+            { id: "g5", name: "Full Grilled Chicken", price: 129, desc: "Whole chicken, herb marinade" },
+            { id: "g6", name: "Mixed Meat Platter", price: 189, desc: "Steak, wors, chop & pap + salad" }
+        ],
+        stews: [
+            { id: "st1", name: "Beef Stew & Rice", price: 75, desc: "Homestyle beef stew, fluffy white rice" },
+            { id: "st2", name: "Chicken Stew & Pap", price: 69, desc: "Rich chicken stew with creamy pap" },
+            { id: "st3", name: "Wors Stew", price: 72, desc: "Boerewors in tomato gravy + pap" },
+            { id: "st4", name: "Mogodu (Tripe) with Pap", price: 85, desc: "Traditional slow-cooked tripe", popular: true },
+            { id: "st5", name: "Macaroni & Mince Stew", price: 68, desc: "Cheesy baked mince pasta stew" },
+            { id: "st6", name: "Chicken Feet Stew (Grizzly)", price: 59, desc: "Spicy broth, tender feet, pap on side" }
+        ],
+        street: [
+            { id: "sm1", name: "Russian & Chips", price: 42, desc: "Classic township combo + sauce", popular: true },
+            { id: "sm2", name: "Viennas & Chips", price: 39, desc: "Grilled viennas, crispy chips" },
+            { id: "sm3", name: "Wors Roll (full)", price: 48, desc: "Loaded with onion & tomato sauce" },
+            { id: "sm4", name: "Darwooq Burger", price: 62, desc: "Layered sandwich, beef patty, cheese, egg" },
+            { id: "sm5", name: "Kota (Quarter Loaf)", price: 55, desc: "Polony, chips, cheese, sauces + atchaar", popular: true },
+            { id: "sm6", name: "Kota Deluxe (RUSSIAN + EGG)", price: 69, desc: "Loaded with russian, cheese, egg, chips" }
+        ],
+        chicken: [
+            { id: "ch1", name: "2pc Fried Chicken Bucket", price: 49, desc: "Crispy + spicy option" },
+            { id: "ch2", name: "5pc Fried Chicken Bucket", price: 99, desc: "Great for sharing", popular: true },
+            { id: "ch3", name: "6pc Wings & Pap/Chips", price: 65, desc: "Choice of pap or chips" },
+            { id: "ch4", name: "Family Meal (Full Chkn + Pap + Salad + 2L)", price: 199, desc: "Feeds 3-4 people" },
+            { id: "ch5", name: "Half Grilled Chicken + Chips", price: 85, desc: "Fresh off the braai" }
+        ],
+        sides: [
+            { id: "sd1", name: "Pap (Regular)", price: 18, desc: "Smooth mieliepap" },
+            { id: "sd2", name: "Pap (Large Family)", price: 32, desc: "Perfect for sharing" },
+            { id: "sd3", name: "Chips (Small)", price: 19, desc: "Crispy golden" },
+            { id: "sd4", name: "Chips (Large)", price: 35, desc: "Extra portion" },
+            { id: "sd5", name: "Chakalaka (side)", price: 15, desc: "Spicy vegetable relish", popular: true },
+            { id: "sd6", name: "Coleslaw", price: 16, desc: "Creamy & fresh" },
+            { id: "sd7", name: "Green Salad", price: 22, desc: "Lettuce, tomato, cucumber" },
+            { id: "sd8", name: "Spinach & Onion", price: 24, desc: "Sautéed traditional style" }
+        ],
+        drinks: [
+            { id: "dr1", name: "Coke (330ml)", price: 15, desc: "Ice cold" },
+            { id: "dr2", name: "Sprite (330ml)", price: 15, desc: "" },
+            { id: "dr3", name: "Stoney Ginger Beer", price: 18, desc: "Classic SA" },
+            { id: "dr4", name: "Mineral Water (500ml)", price: 12, desc: "" },
+            { id: "dr5", name: "Castle Lite (beer)", price: 28, desc: "Cold local brew" },
+            { id: "dr6", name: "Carling Black Label", price: 28, desc: "" },
+            { id: "dr7", name: "Heineken", price: 32, desc: "Premium lager" },
+            { id: "dr8", name: "Carina BYL (cigar)", price: 45, desc: "Smooth cigar" }
+        ]
+    };
 
-    function openOrderPrompt() {
-        const userConfirmed = confirm("📞 Connect with Mzansi Delights!\n\nCall us: +27 23 456 7890\nOr click OK to send WhatsApp message (draft).\n\nGet your order: Grilled meats, Kota, stews & more 🔥");
-        if (userConfirmed) {
-            window.open("https://wa.me/27234567890?text=Hello%20Mzansi%20Delights!%20I'd%20like%20to%20place%20an%20order%20for%20some%20grilled%20meats%20and%20chips%20%F0%9F%8D%97%F0%9F%94%A5", "_blank");
+    // Cart array
+    let cart = [];
+
+    // Render menu items dynamically
+    function renderMenu() {
+        renderCategory("grilledGrid", fullMenu.grilled);
+        renderCategory("stewGrid", fullMenu.stews);
+        renderCategory("streetGrid", fullMenu.street);
+        renderCategory("chickenGrid", fullMenu.chicken);
+        renderCategory("sidesGrid", fullMenu.sides);
+        renderCategory("drinksGrid", fullMenu.drinks);
+    }
+
+    function renderCategory(containerId, items) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+        container.innerHTML = "";
+        items.forEach(item => {
+            const card = document.createElement("div");
+            card.className = "menu-item";
+            card.innerHTML = `
+                <div class="item-info">
+                    <div class="item-name">
+                        ${item.name}
+                        <span class="item-price">R${item.price}</span>
+                    </div>
+                    <div class="item-desc">${item.desc || "Fresh Mzansi flavour"} ${item.popular ? '<span class="badge-popular"><i class="fas fa-star"></i> Popular</span>' : ''}</div>
+                    <button class="add-btn" data-id="${item.id}" data-name="${item.name.replace(/'/g, "\\'")}" data-price="${item.price}">
+                        <i class="fas fa-plus-circle"></i> Add to Cart
+                    </button>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+
+        // Attach event listeners to add buttons
+        document.querySelectorAll('.add-btn').forEach(btn => {
+            btn.removeEventListener('click', addToCartHandler);
+            btn.addEventListener('click', addToCartHandler);
+        });
+    }
+
+    function addToCartHandler(e) {
+        const btn = e.currentTarget;
+        const id = btn.getAttribute('data-id');
+        const name = btn.getAttribute('data-name');
+        const price = parseFloat(btn.getAttribute('data-price'));
+        addItemToCart(id, name, price);
+    }
+
+    function addItemToCart(id, name, price) {
+        const existing = cart.find(item => item.id === id);
+        if (existing) {
+            existing.quantity += 1;
+        } else {
+            cart.push({ id, name, price, quantity: 1 });
+        }
+        updateCartUI();
+        showAddFeedback(name);
+    }
+
+    function showAddFeedback(itemName) {
+        const feedback = document.createElement('div');
+        feedback.textContent = `✓ ${itemName} added to cart`;
+        feedback.style.position = 'fixed';
+        feedback.style.bottom = '20px';
+        feedback.style.right = '20px';
+        feedback.style.backgroundColor = '#2c7a1f';
+        feedback.style.color = 'white';
+        feedback.style.padding = '10px 18px';
+        feedback.style.borderRadius = '40px';
+        feedback.style.fontSize = '0.9rem';
+        feedback.style.zIndex = '999';
+        feedback.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)';
+        document.body.appendChild(feedback);
+        setTimeout(() => feedback.remove(), 1800);
+    }
+
+    function updateCartUI() {
+        const cartContainer = document.getElementById('cartItemsContainer');
+        const totalSpan = document.getElementById('cartTotalAmount');
+        const itemCountSpan = document.getElementById('cartItemCount');
+        
+        if (!cartContainer) return;
+
+        if (cart.length === 0) {
+            cartContainer.innerHTML = `<div class="empty-cart-msg"><i class="fas fa-utensils"></i> Cart is empty. Add delicious Mzansi dishes!</div>`;
+            totalSpan.innerText = `R0.00`;
+            itemCountSpan.innerText = `0 items`;
+            return;
+        }
+
+        let total = 0;
+        let totalItems = 0;
+        let cartHtml = '';
+        cart.forEach((item, idx) => {
+            const itemTotal = item.price * item.quantity;
+            total += itemTotal;
+            totalItems += item.quantity;
+            cartHtml += `
+                <div class="cart-item-row">
+                    <div class="cart-item-details">
+                        <div class="cart-item-name">${item.name}</div>
+                        <div class="cart-item-price">R${item.price} each</div>
+                    </div>
+                    <div class="cart-item-controls">
+                        <button class="qty-btn" data-idx="${idx}" data-delta="-1">-</button>
+                        <span class="cart-qty">${item.quantity}</span>
+                        <button class="qty-btn" data-idx="${idx}" data-delta="1">+</button>
+                        <button class="remove-item-btn" data-idx="${idx}"><i class="fas fa-trash-alt"></i></button>
+                    </div>
+                    <div style="min-width: 60px; text-align:right; font-weight:600;">R${itemTotal}</div>
+                </div>
+            `;
+        });
+        cartContainer.innerHTML = cartHtml;
+        totalSpan.innerText = `R${total.toFixed(2)}`;
+        itemCountSpan.innerText = `${totalItems} ${totalItems === 1 ? 'item' : 'items'}`;
+
+        // Attach quantity & remove events
+        document.querySelectorAll('.qty-btn').forEach(btn => {
+            btn.removeEventListener('click', qtyHandler);
+            btn.addEventListener('click', qtyHandler);
+        });
+        document.querySelectorAll('.remove-item-btn').forEach(btn => {
+            btn.removeEventListener('click', removeHandler);
+            btn.addEventListener('click', removeHandler);
+        });
+    }
+
+    function qtyHandler(e) {
+        const btn = e.currentTarget;
+        const idx = parseInt(btn.getAttribute('data-idx'));
+        const delta = parseInt(btn.getAttribute('data-delta'));
+        if (isNaN(idx) || !cart[idx]) return;
+        const newQty = cart[idx].quantity + delta;
+        if (newQty <= 0) {
+            cart.splice(idx, 1);
+        } else {
+            cart[idx].quantity = newQty;
+        }
+        updateCartUI();
+    }
+
+    function removeHandler(e) {
+        const btn = e.currentTarget;
+        const idx = parseInt(btn.getAttribute('data-idx'));
+        if (!isNaN(idx) && cart[idx]) {
+            cart.splice(idx, 1);
+            updateCartUI();
         }
     }
 
-    function directWhatsapp() {
-        window.open("https://wa.me/27234567890?text=Hi%20Mzansi%20Delights!%20I%20want%20to%20order%20Kota%20and%20Fried%20Chicken%20buckets%20%F0%9F%8D%97%20Please%20send%20menu.", "_blank");
+    function generateWhatsAppOrder() {
+        if (cart.length === 0) {
+            alert("🛒 Your cart is empty! Please add some delicious items before ordering.");
+            return null;
+        }
+        let message = "🍽️ *MZANSI DELIGHTS ORDER* 🍽️%0A";
+        let orderDetails = "";
+        let grandTotal = 0;
+        cart.forEach(item => {
+            const itemTotal = item.price * item.quantity;
+            grandTotal += itemTotal;
+            orderDetails += `• ${item.quantity}x ${item.name} = R${itemTotal}%0A`;
+        });
+        message += orderDetails;
+        message += `%0A📦 *TOTAL: R${grandTotal.toFixed(2)}*%0A`;
+        message += `📍 Pickup at Soweto (Orlando Towers) or delivery available.%0A📞 Contact: +27 23 456 7890%0A🙏 Thank you for choosing Mzansi Delights!`;
+        return message;
     }
 
-    orderBtnHero.addEventListener('click', openOrderPrompt);
-    orderFooterBtn.addEventListener('click', openOrderPrompt);
-    whatsappBtn.addEventListener('click', directWhatsapp);
-
-    if (fakeFb) {
-        fakeFb.addEventListener('click', (e) => {
-            e.preventDefault();
-            alert("Visit our Facebook page: Mzansi Delights — Like us for weekly specials & braai competitions!");
-            window.open("https://www.facebook.com/mzansidelights", "_blank");
-        });
+    function sendWhatsappOrder() {
+        const orderText = generateWhatsAppOrder();
+        if (orderText) {
+            window.open(`https://wa.me/27234567890?text=${orderText}`, "_blank");
+        }
     }
 
-    const messengerIcon = document.querySelector('.fa-facebook-messenger');
-    if(messengerIcon) {
-        messengerIcon.addEventListener('click', () => {
-            alert("💬 Message us on Messenger: Mzansi Delights replies within minutes!");
-        });
+    // Back to homepage (index.html)
+    function goBackToHome() {
+        window.location.href = 'index.html';
     }
 
-    // hover polish for menu items
-    const allMenuItems = document.querySelectorAll('.menu-list li');
-    allMenuItems.forEach(item => {
-        item.addEventListener('mouseenter', () => {
-            item.style.backgroundColor = "#fff4e8";
-            item.style.transition = "0.1s";
-            item.style.borderRadius = "12px";
-            item.style.paddingLeft = "8px";
-        });
-        item.addEventListener('mouseleave', () => {
-            item.style.backgroundColor = "transparent";
-            item.style.paddingLeft = "0px";
-        });
+    // Initialize page
+    document.addEventListener('DOMContentLoaded', () => {
+        renderMenu();
+        const checkoutBtn = document.getElementById('whatsappCheckoutBtn');
+        if (checkoutBtn) checkoutBtn.addEventListener('click', sendWhatsappOrder);
+        const backBtn = document.getElementById('backToHomeBtn');
+        if (backBtn) backBtn.addEventListener('click', goBackToHome);
     });
-
-    // add dynamic style for buttons
-    const stylePress = document.createElement('style');
-    stylePress.textContent = `
-        .order-now, .cta-button {
-            transition: all 0.3s ease;
-        }
-        .order-now:active, .cta-button:active {
-            transform: scale(0.97);
-        }
-    `;
-    document.head.appendChild(stylePress);
-    
-    console.log("Mzansi Delights — Hero background now features Soweto Orlando Towers! 🇿🇦");
 </script>
 </body>
 </html>
