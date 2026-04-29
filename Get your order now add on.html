@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Mzansi Delights | Full Menu with Prices</title>
-    <!-- Google Fonts & awesome icons -->
+    <title>Get Your Order Now | Mzansi Delights Full Menu with Prices</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -20,8 +19,8 @@
             color: #2c1a0c;
         }
 
-        /* header with Orlando towers background (consistent) */
-        .menu-header {
+        /* Header with Orlando Towers */
+        .order-header {
             background: linear-gradient(135deg, #1f1409, #2c1a0c), url('Soweto_orlandotowers.jpg');
             background-size: cover;
             background-position: center 35%;
@@ -31,22 +30,17 @@
             text-align: center;
             border-bottom-left-radius: 2rem;
             border-bottom-right-radius: 2rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             position: relative;
         }
 
-        .menu-header h1 {
+        .order-header h1 {
             font-size: 2.5rem;
             font-weight: 800;
             background: linear-gradient(135deg, #FFC857, #FF8C42);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
-        }
-
-        .menu-header p {
-            margin-top: 0.5rem;
-            opacity: 0.9;
         }
 
         .back-home {
@@ -63,56 +57,58 @@
         }
 
         .back-home:hover {
-            background: var(--gold-mzansi);
+            background: #f5b042;
             color: #2c1a0c;
         }
 
-        .container-menu {
-            max-width: 1300px;
+        .container-order {
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 1.5rem 2rem;
         }
 
-        .section-title {
+        /* Category sections */
+        .category-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .category-title {
             font-size: 1.8rem;
             font-weight: 800;
             border-left: 7px solid #e65c1e;
             padding-left: 1rem;
-            margin: 2rem 0 1.5rem 0;
+            margin: 1.5rem 0 1.2rem 0;
             color: #2e241f;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
-        .menu-category-grid {
+        .menu-grid-order {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-            gap: 1.8rem;
-            margin-bottom: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
         }
 
-        .menu-item-card {
+        .menu-item {
             background: white;
             border-radius: 1.5rem;
             overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.2s;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.25s ease;
             border: 1px solid #ffe0bd;
             display: flex;
             flex-direction: column;
         }
 
-        .menu-item-card:hover {
+        .menu-item:hover {
             transform: translateY(-4px);
-            box-shadow: 0 18px 28px -8px rgba(0,0,0,0.15);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
         }
 
-        .item-header {
-            background: #ffefdd;
-            padding: 0.8rem 1.2rem;
-            border-bottom: 1px solid #f5ca9a;
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
+        .item-info {
+            padding: 1rem 1.2rem;
+            flex: 1;
         }
 
         .item-name {
@@ -120,60 +116,65 @@
             font-weight: 800;
             color: #b34117;
             display: flex;
-            align-items: center;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
             gap: 8px;
+            margin-bottom: 0.4rem;
         }
 
         .item-price {
-            font-weight: 800;
             background: #e65c1e20;
             padding: 0.2rem 0.7rem;
             border-radius: 50px;
-            font-size: 1.05rem;
+            font-size: 1rem;
             color: #c23d0a;
+            font-weight: 700;
         }
 
         .item-desc {
-            padding: 0.8rem 1.2rem 1rem;
-            color: #4f3522;
-            font-size: 0.85rem;
-            border-top: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #fffaf5;
+            font-size: 0.8rem;
+            color: #6b4c33;
+            margin-bottom: 1rem;
+            line-height: 1.4;
         }
 
         .add-btn {
             background: #f5b042;
             border: none;
-            padding: 0.4rem 1rem;
+            padding: 0.5rem 1rem;
             border-radius: 40px;
-            font-weight: 600;
-            font-size: 0.75rem;
-            display: flex;
+            font-weight: 700;
+            font-size: 0.85rem;
+            display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
             cursor: pointer;
-            transition: 0.2s;
+            transition: all 0.2s;
             color: #2c1a0c;
+            width: 100%;
+            justify-content: center;
         }
 
         .add-btn:hover {
             background: #e69b2e;
-            transform: scale(0.97);
+            transform: scale(0.98);
         }
 
-        .order-summary {
+        /* Shopping Cart Sidebar */
+        .cart-sidebar {
             background: white;
             border-radius: 1.8rem;
             padding: 1.5rem;
-            margin-top: 2.5rem;
+            margin-top: 2rem;
             border: 2px solid #ffdbb5;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            position: sticky;
+            bottom: 0;
+            z-index: 100;
         }
 
-        .summary-title {
+        .cart-title {
             font-size: 1.5rem;
             font-weight: 800;
             display: flex;
@@ -184,37 +185,49 @@
             margin-bottom: 1rem;
         }
 
-        .cart-items {
+        .cart-items-list {
             max-height: 280px;
             overflow-y: auto;
             margin-bottom: 1rem;
         }
 
-        .cart-item {
+        .cart-item-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0.6rem 0;
+            padding: 0.7rem 0;
             border-bottom: 1px solid #f1e0ce;
         }
 
-        .cart-item-info {
+        .cart-item-details {
             flex: 2;
         }
 
         .cart-item-name {
             font-weight: 600;
+            font-size: 0.9rem;
         }
 
         .cart-item-price {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: #e65c1e;
         }
 
-        .cart-item-actions {
+        .cart-item-controls {
             display: flex;
             gap: 8px;
             align-items: center;
+        }
+
+        .qty-btn {
+            background: #f5e1ca;
+            border: none;
+            width: 28px;
+            height: 28px;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.1s;
         }
 
         .cart-qty {
@@ -223,27 +236,16 @@
             text-align: center;
         }
 
-        .qty-btn {
-            background: #f5e1ca;
-            border: none;
-            width: 26px;
-            height: 26px;
-            border-radius: 30px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.1s;
-        }
-
-        .remove-item {
+        .remove-item-btn {
             background: none;
             border: none;
             color: #c25d2c;
             cursor: pointer;
-            font-size: 1.1rem;
+            font-size: 1rem;
             margin-left: 6px;
         }
 
-        .total-row {
+        .cart-total {
             font-size: 1.3rem;
             font-weight: 800;
             display: flex;
@@ -253,12 +255,12 @@
             border-top: 2px solid #ffd7a5;
         }
 
-        .checkout-btn {
-            background: #2c7a1f;
+        .whatsapp-order {
+            background: #25D366;
             color: white;
             border: none;
             width: 100%;
-            padding: 0.9rem;
+            padding: 1rem;
             border-radius: 60px;
             font-weight: 800;
             margin-top: 1rem;
@@ -271,198 +273,219 @@
             font-size: 1rem;
         }
 
-        .checkout-btn:hover {
-            background: #1f6314;
+        .whatsapp-order:hover {
+            background: #1da15a;
             transform: scale(1.01);
         }
 
-        .empty-cart {
+        .empty-cart-msg {
             text-align: center;
             color: #9b7b60;
-            padding: 1.2rem;
+            padding: 1rem;
         }
 
         footer {
             text-align: center;
-            padding: 2rem;
+            padding: 2rem 1rem 1rem;
             font-size: 0.75rem;
             color: #886e54;
         }
 
-        @media (max-width: 700px) {
-            .menu-category-grid {
+        @media (max-width: 768px) {
+            .menu-grid-order {
                 grid-template-columns: 1fr;
+            }
+            .category-title {
+                font-size: 1.4rem;
             }
         }
 
-        .badge-new {
+        .badge-popular {
             background: #e65c1e;
             color: white;
             font-size: 0.6rem;
-            padding: 0.1rem 0.5rem;
+            padding: 0.2rem 0.6rem;
             border-radius: 20px;
+            margin-left: 8px;
         }
     </style>
 </head>
 <body>
 
-<div class="menu-header">
-    <h1>🍽️ MZANSI DELIGHTS • FULL MENU & PRICES</h1>
-    <p><i class="fas fa-map-marker-alt"></i> Soweto – Orlando Towers | Authentic flavours, fair prices</p>
+<div class="order-header">
+    <h1>🍽️ GET YOUR ORDER NOW! 🍽️</h1>
+    <p><i class="fas fa-map-marker-alt"></i> Soweto – Orlando Towers | Full Menu with Prices | Add to Cart & WhatsApp Order</p>
     <button class="back-home" id="backToHomeBtn"><i class="fas fa-arrow-left"></i> Back to Homepage</button>
 </div>
 
-<div class="container-menu">
-    <!-- GRILLED MEATS SECTION -->
-    <div class="section-title"><i class="fas fa-fire"></i> GRILLED MEATS (Rabai Staples)</div>
-    <div class="menu-category-grid" id="grilledMeatsGrid"></div>
+<div class="container-order">
+    <!-- GRILLED MEATS -->
+    <div class="category-section">
+        <div class="category-title"><i class="fas fa-fire"></i> GRILLED MEATS (Rabai Staples)</div>
+        <div class="menu-grid-order" id="grilledGrid"></div>
+    </div>
 
-    <!-- STEWS & TRADITIONAL -->
-    <div class="section-title"><i class="fas fa-mug-hot"></i> Stews & Traditional Plates</div>
-    <div class="menu-category-grid" id="stewsGrid"></div>
+    <!-- STEWS -->
+    <div class="category-section">
+        <div class="category-title"><i class="fas fa-mug-hot"></i> STEWS & TRADITIONAL PLATES</div>
+        <div class="menu-grid-order" id="stewGrid"></div>
+    </div>
 
-    <!-- ONION STREET MEALS / KOTA & BURGERS -->
-    <div class="section-title"><i class="fas fa-truck-fast"></i> Street Eats & Kota Specials</div>
-    <div class="menu-category-grid" id="streetMealsGrid"></div>
+    <!-- STREET EATS -->
+    <div class="category-section">
+        <div class="category-title"><i class="fas fa-truck-fast"></i> STREET EATS & KOTA SPECIALS</div>
+        <div class="menu-grid-order" id="streetGrid"></div>
+    </div>
 
     <!-- FRIED & GRILLED CHICKEN -->
-    <div class="section-title"><i class="fas fa-drumstick"></i> Fried & Grilled Chicken</div>
-    <div class="menu-category-grid" id="chickenGrid"></div>
-
-    <!-- SIDES & SALADS -->
-    <div class="section-title"><i class="fas fa-leaf"></i> Sides & Salads</div>
-    <div class="menu-category-grid" id="sidesGrid"></div>
-
-    <!-- BEVERAGES / DRINKS -->
-    <div class="section-title"><i class="fas fa-glass-cheers"></i> Drinks & Refreshments</div>
-    <div class="menu-category-grid" id="drinksGrid"></div>
-
-    <!-- ORDER SUMMARY CART -->
-    <div class="order-summary" id="orderSummary">
-        <div class="summary-title">
-            <i class="fas fa-shopping-basket"></i> Your Order
-            <span style="font-size: 0.8rem; background:#f5b04220; padding:0.2rem 0.6rem; border-radius:30px;" id="itemCount">0 items</span>
-        </div>
-        <div id="cartItemsList" class="cart-items">
-            <div class="empty-cart"><i class="fas fa-utensils"></i> Your cart is empty. Add delicious Mzansi dishes!</div>
-        </div>
-        <div class="total-row">
-            <span>Total Amount:</span>
-            <span id="cartTotal">R0.00</span>
-        </div>
-        <button class="checkout-btn" id="checkoutBtn"><i class="fab fa-whatsapp"></i> ORDER VIA WHATSAPP</button>
-        <p style="font-size: 0.7rem; text-align:center; margin-top:0.8rem;">⚠️ Prices include VAT | Add items to cart, then click order</p>
+    <div class="category-section">
+        <div class="category-title"><i class="fas fa-drumstick"></i> FRIED & GRILLED CHICKEN</div>
+        <div class="menu-grid-order" id="chickenGrid"></div>
     </div>
+
+    <!-- SIDES -->
+    <div class="category-section">
+        <div class="category-title"><i class="fas fa-leaf"></i> SIDES & SALADS</div>
+        <div class="menu-grid-order" id="sidesGrid"></div>
+    </div>
+
+    <!-- DRINKS & BEVERAGES -->
+    <div class="category-section">
+        <div class="category-title"><i class="fas fa-glass-cheers"></i> DRINKS & BEVERAGES</div>
+        <div class="menu-grid-order" id="drinksGrid"></div>
+    </div>
+
+    <!-- SHOPPING CART SECTION -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-title">
+            <i class="fas fa-shopping-basket"></i> Your Order Cart
+            <span style="font-size: 0.8rem; background:#f5b04220; padding:0.2rem 0.7rem; border-radius:30px;" id="cartItemCount">0 items</span>
+        </div>
+        <div id="cartItemsContainer" class="cart-items-list">
+            <div class="empty-cart-msg"><i class="fas fa-utensils"></i> Cart is empty. Add delicious Mzansi dishes!</div>
+        </div>
+        <div class="cart-total">
+            <span>Total Amount:</span>
+            <span id="cartTotalAmount">R0.00</span>
+        </div>
+        <button class="whatsapp-order" id="whatsappCheckoutBtn">
+            <i class="fab fa-whatsapp"></i> ORDER VIA WHATSAPP
+        </button>
+        <p style="font-size: 0.7rem; text-align:center; margin-top:0.8rem;">✅ Prices include VAT | Add items & click order</p>
+    </div>
+
     <footer>
         <p>🇿🇦 Mzansi Delights — Real Braai, Real Township Vibe | Call +27 23 456 7890 for large bookings</p>
     </footer>
 </div>
 
 <script>
-    // ---------- FULL MENU WITH PRICES (accurate based on typical Mzansi rates + image context) ----------
-    const menuDatabase = {
+    // ------------------- FULL MENU DATABASE WITH PRICES -------------------
+    const fullMenu = {
         grilled: [
-            { id: "g1", name: "Beef Short Rib (grilled)", price: 89, desc: "Tender beef rib, smoky braai glaze" },
-            { id: "g2", name: "Brisket & Chakalaka", price: 99, desc: "Slow-cooked brisket with spicy relish" },
-            { id: "g3", name: "Boerewors Roll (single)", price: 45, desc: "Traditional sausage, soft roll, onion relish" },
+            { id: "g1", name: "Beef Short Rib (grilled)", price: 89, desc: "Tender beef rib, smoky braai glaze", popular: true },
+            { id: "g2", name: "Brisket & Chakalaka", price: 99, desc: "Slow-cooked brisket with spicy relish", popular: true },
+            { id: "g3", name: "Boerewors Roll", price: 45, desc: "Traditional sausage, soft roll, onion relish" },
             { id: "g4", name: "Pork Chops (2 pieces)", price: 79, desc: "Grilled with peri-peri rub" },
             { id: "g5", name: "Full Grilled Chicken", price: 129, desc: "Whole chicken, herb marinade" },
             { id: "g6", name: "Mixed Meat Platter", price: 189, desc: "Steak, wors, chop & pap + salad" }
         ],
         stews: [
-            { id: "s1", name: "Beef Stew & Rice", price: 75, desc: "Homestyle beef stew, fluffy white rice" },
-            { id: "s2", name: "Chicken Stew & Pap", price: 69, desc: "Rich chicken stew with creamy pap" },
-            { id: "s3", name: "Wors Stew (sausage)", price: 72, desc: "Boerewors in tomato gravy + pap" },
-            { id: "s4", name: "Mogodu (Tripe) with Pap", price: 85, desc: "Traditional slow-cooked tripe" },
-            { id: "s5", name: "Macaroni & Mince Stew", price: 68, desc: "Cheesy baked mince pasta stew" },
-            { id: "s6", name: "Chicken Feet Stew (Grizzly)", price: 59, desc: "Spicy broth, tender feet, pap on side" }
+            { id: "st1", name: "Beef Stew & Rice", price: 75, desc: "Homestyle beef stew, fluffy white rice" },
+            { id: "st2", name: "Chicken Stew & Pap", price: 69, desc: "Rich chicken stew with creamy pap" },
+            { id: "st3", name: "Wors Stew", price: 72, desc: "Boerewors in tomato gravy + pap" },
+            { id: "st4", name: "Mogodu (Tripe) with Pap", price: 85, desc: "Traditional slow-cooked tripe", popular: true },
+            { id: "st5", name: "Macaroni & Mince Stew", price: 68, desc: "Cheesy baked mince pasta stew" },
+            { id: "st6", name: "Chicken Feet Stew (Grizzly)", price: 59, desc: "Spicy broth, tender feet, pap on side" }
         ],
         street: [
-            { id: "st1", name: "Russian & Chips", price: 42, desc: "Classic township combo + sauce" },
-            { id: "st2", name: "Viennas & Chips", price: 39, desc: "Grilled viennas, crispy chips" },
-            { id: "st3", name: "Wors Roll (full)", price: 48, desc: "Loaded with onion & tomato sauce" },
-            { id: "st4", name: "Darwooq Burger", price: 62, desc: "Layered sandwich, beef patty, cheese, egg" },
-            { id: "st5", name: "Kota (Quarter Loaf)", price: 55, desc: "Polony, chips, cheese, sauces + atchaar" },
-            { id: "st6", name: "Kota Deluxe (RUSSIAN + EGG)", price: 69, desc: "Loaded with russian, cheese, egg, chips" }
+            { id: "sm1", name: "Russian & Chips", price: 42, desc: "Classic township combo + sauce", popular: true },
+            { id: "sm2", name: "Viennas & Chips", price: 39, desc: "Grilled viennas, crispy chips" },
+            { id: "sm3", name: "Wors Roll (full)", price: 48, desc: "Loaded with onion & tomato sauce" },
+            { id: "sm4", name: "Darwooq Burger", price: 62, desc: "Layered sandwich, beef patty, cheese, egg" },
+            { id: "sm5", name: "Kota (Quarter Loaf)", price: 55, desc: "Polony, chips, cheese, sauces + atchaar", popular: true },
+            { id: "sm6", name: "Kota Deluxe (RUSSIAN + EGG)", price: 69, desc: "Loaded with russian, cheese, egg, chips" }
         ],
         chicken: [
-            { id: "c1", name: "2pc Fried Chicken Bucket", price: 49, desc: "Crispy + spicy option" },
-            { id: "c2", name: "5pc Fried Chicken Bucket", price: 99, desc: "Great for sharing" },
-            { id: "c3", name: "6pc Wings & Pap/Chips", price: 65, desc: "Choice of pap or chips" },
-            { id: "c4", name: "Family Meal (Full Chkn + Pap + Salad + 2L)", price: 199, desc: "Feeds 3-4 people" },
-            { id: "c5", name: "Half Grilled Chicken + Chips", price: 85, desc: "Fresh off the braai" }
+            { id: "ch1", name: "2pc Fried Chicken Bucket", price: 49, desc: "Crispy + spicy option" },
+            { id: "ch2", name: "5pc Fried Chicken Bucket", price: 99, desc: "Great for sharing", popular: true },
+            { id: "ch3", name: "6pc Wings & Pap/Chips", price: 65, desc: "Choice of pap or chips" },
+            { id: "ch4", name: "Family Meal (Full Chkn + Pap + Salad + 2L)", price: 199, desc: "Feeds 3-4 people" },
+            { id: "ch5", name: "Half Grilled Chicken + Chips", price: 85, desc: "Fresh off the braai" }
         ],
         sides: [
             { id: "sd1", name: "Pap (Regular)", price: 18, desc: "Smooth mieliepap" },
             { id: "sd2", name: "Pap (Large Family)", price: 32, desc: "Perfect for sharing" },
             { id: "sd3", name: "Chips (Small)", price: 19, desc: "Crispy golden" },
             { id: "sd4", name: "Chips (Large)", price: 35, desc: "Extra portion" },
-            { id: "sd5", name: "Chakalaka (side)", price: 15, desc: "Spicy vegetable relish" },
+            { id: "sd5", name: "Chakalaka (side)", price: 15, desc: "Spicy vegetable relish", popular: true },
             { id: "sd6", name: "Coleslaw", price: 16, desc: "Creamy & fresh" },
             { id: "sd7", name: "Green Salad", price: 22, desc: "Lettuce, tomato, cucumber" },
             { id: "sd8", name: "Spinach & Onion", price: 24, desc: "Sautéed traditional style" }
         ],
         drinks: [
-            { id: "d1", name: "Coke (330ml)", price: 15, desc: "" },
-            { id: "d2", name: "Sprite (330ml)", price: 15, desc: "" },
-            { id: "d3", name: "Stoney Ginger Beer", price: 18, desc: "Classic SA" },
-            { id: "d4", name: "Mineral Water (500ml)", price: 12, desc: "" },
-            { id: "d5", name: "Castle Lite (beer)", price: 28, desc: "Cold local brew" },
-            { id: "d6", name: "Carling Black Label", price: 28, desc: "" },
-            { id: "d7", name: "Heineken", price: 32, desc: "Premium lager" },
-            { id: "d8", name: "Carina BYL (cigar)", price: 45, desc: "Smooth cigar" }
+            { id: "dr1", name: "Coke (330ml)", price: 15, desc: "Ice cold" },
+            { id: "dr2", name: "Sprite (330ml)", price: 15, desc: "" },
+            { id: "dr3", name: "Stoney Ginger Beer", price: 18, desc: "Classic SA" },
+            { id: "dr4", name: "Mineral Water (500ml)", price: 12, desc: "" },
+            { id: "dr5", name: "Castle Lite (beer)", price: 28, desc: "Cold local brew" },
+            { id: "dr6", name: "Carling Black Label", price: 28, desc: "" },
+            { id: "dr7", name: "Heineken", price: 32, desc: "Premium lager" },
+            { id: "dr8", name: "Carina BYL (cigar)", price: 45, desc: "Smooth cigar" }
         ]
     };
 
-    // Cart state
-    let cart = [];  // each item: { id, name, price, quantity }
+    // Cart array
+    let cart = [];
 
+    // Render menu items dynamically
     function renderMenu() {
-        renderCategory("grilledMeatsGrid", menuDatabase.grilled);
-        renderCategory("stewsGrid", menuDatabase.stews);
-        renderCategory("streetMealsGrid", menuDatabase.street);
-        renderCategory("chickenGrid", menuDatabase.chicken);
-        renderCategory("sidesGrid", menuDatabase.sides);
-        renderCategory("drinksGrid", menuDatabase.drinks);
+        renderCategory("grilledGrid", fullMenu.grilled);
+        renderCategory("stewGrid", fullMenu.stews);
+        renderCategory("streetGrid", fullMenu.street);
+        renderCategory("chickenGrid", fullMenu.chicken);
+        renderCategory("sidesGrid", fullMenu.sides);
+        renderCategory("drinksGrid", fullMenu.drinks);
     }
 
-    function renderCategory(containerId, itemsArray) {
+    function renderCategory(containerId, items) {
         const container = document.getElementById(containerId);
         if (!container) return;
         container.innerHTML = "";
-        itemsArray.forEach(item => {
+        items.forEach(item => {
             const card = document.createElement("div");
-            card.className = "menu-item-card";
+            card.className = "menu-item";
             card.innerHTML = `
-                <div class="item-header">
-                    <div class="item-name"><i class="fas fa-tag"></i> ${item.name}</div>
-                    <div class="item-price">R${item.price}</div>
-                </div>
-                <div class="item-desc">
-                    <span style="font-size:0.8rem;">${item.desc || "Fresh Mzansi flavour"}</span>
-                    <button class="add-btn" data-id="${item.id}" data-name="${item.name}" data-price="${item.price}">
-                        <i class="fas fa-plus-circle"></i> Add
+                <div class="item-info">
+                    <div class="item-name">
+                        ${item.name}
+                        <span class="item-price">R${item.price}</span>
+                    </div>
+                    <div class="item-desc">${item.desc || "Fresh Mzansi flavour"} ${item.popular ? '<span class="badge-popular"><i class="fas fa-star"></i> Popular</span>' : ''}</div>
+                    <button class="add-btn" data-id="${item.id}" data-name="${item.name.replace(/'/g, "\\'")}" data-price="${item.price}">
+                        <i class="fas fa-plus-circle"></i> Add to Cart
                     </button>
                 </div>
             `;
             container.appendChild(card);
         });
-        // attach event listeners after DOM injection
+
+        // Attach event listeners to add buttons
         document.querySelectorAll('.add-btn').forEach(btn => {
-            btn.removeEventListener('click', addHandler);
-            btn.addEventListener('click', addHandler);
+            btn.removeEventListener('click', addToCartHandler);
+            btn.addEventListener('click', addToCartHandler);
         });
     }
 
-    function addHandler(e) {
+    function addToCartHandler(e) {
         const btn = e.currentTarget;
         const id = btn.getAttribute('data-id');
         const name = btn.getAttribute('data-name');
         const price = parseFloat(btn.getAttribute('data-price'));
-        addToCart(id, name, price);
+        addItemToCart(id, name, price);
     }
 
-    function addToCart(id, name, price) {
+    function addItemToCart(id, name, price) {
         const existing = cart.find(item => item.id === id);
         if (existing) {
             existing.quantity += 1;
@@ -470,21 +493,40 @@
             cart.push({ id, name, price, quantity: 1 });
         }
         updateCartUI();
+        showAddFeedback(name);
+    }
+
+    function showAddFeedback(itemName) {
+        const feedback = document.createElement('div');
+        feedback.textContent = `✓ ${itemName} added to cart`;
+        feedback.style.position = 'fixed';
+        feedback.style.bottom = '20px';
+        feedback.style.right = '20px';
+        feedback.style.backgroundColor = '#2c7a1f';
+        feedback.style.color = 'white';
+        feedback.style.padding = '10px 18px';
+        feedback.style.borderRadius = '40px';
+        feedback.style.fontSize = '0.9rem';
+        feedback.style.zIndex = '999';
+        feedback.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)';
+        document.body.appendChild(feedback);
+        setTimeout(() => feedback.remove(), 1800);
     }
 
     function updateCartUI() {
-        const cartContainer = document.getElementById('cartItemsList');
-        const totalSpan = document.getElementById('cartTotal');
-        const itemCountSpan = document.getElementById('itemCount');
-        if (!cartContainer) return;
+        const cartContainer = document.getElementById('cartItemsContainer');
+        const totalSpan = document.getElementById('cartTotalAmount');
+        const itemCountSpan = document.getElementById('cartItemCount');
         
+        if (!cartContainer) return;
+
         if (cart.length === 0) {
-            cartContainer.innerHTML = `<div class="empty-cart"><i class="fas fa-utensils"></i> Your cart is empty. Add delicious Mzansi dishes!</div>`;
+            cartContainer.innerHTML = `<div class="empty-cart-msg"><i class="fas fa-utensils"></i> Cart is empty. Add delicious Mzansi dishes!</div>`;
             totalSpan.innerText = `R0.00`;
             itemCountSpan.innerText = `0 items`;
             return;
         }
-        
+
         let total = 0;
         let totalItems = 0;
         let cartHtml = '';
@@ -493,16 +535,16 @@
             total += itemTotal;
             totalItems += item.quantity;
             cartHtml += `
-                <div class="cart-item">
-                    <div class="cart-item-info">
+                <div class="cart-item-row">
+                    <div class="cart-item-details">
                         <div class="cart-item-name">${item.name}</div>
                         <div class="cart-item-price">R${item.price} each</div>
                     </div>
-                    <div class="cart-item-actions">
+                    <div class="cart-item-controls">
                         <button class="qty-btn" data-idx="${idx}" data-delta="-1">-</button>
                         <span class="cart-qty">${item.quantity}</span>
                         <button class="qty-btn" data-idx="${idx}" data-delta="1">+</button>
-                        <button class="remove-item" data-idx="${idx}"><i class="fas fa-trash-alt"></i></button>
+                        <button class="remove-item-btn" data-idx="${idx}"><i class="fas fa-trash-alt"></i></button>
                     </div>
                     <div style="min-width: 60px; text-align:right; font-weight:600;">R${itemTotal}</div>
                 </div>
@@ -511,34 +553,32 @@
         cartContainer.innerHTML = cartHtml;
         totalSpan.innerText = `R${total.toFixed(2)}`;
         itemCountSpan.innerText = `${totalItems} ${totalItems === 1 ? 'item' : 'items'}`;
-        
-        // attach qty & remove events
+
+        // Attach quantity & remove events
         document.querySelectorAll('.qty-btn').forEach(btn => {
             btn.removeEventListener('click', qtyHandler);
             btn.addEventListener('click', qtyHandler);
         });
-        document.querySelectorAll('.remove-item').forEach(btn => {
+        document.querySelectorAll('.remove-item-btn').forEach(btn => {
             btn.removeEventListener('click', removeHandler);
             btn.addEventListener('click', removeHandler);
         });
     }
-    
+
     function qtyHandler(e) {
         const btn = e.currentTarget;
         const idx = parseInt(btn.getAttribute('data-idx'));
         const delta = parseInt(btn.getAttribute('data-delta'));
-        if (isNaN(idx)) return;
-        if (cart[idx]) {
-            const newQty = cart[idx].quantity + delta;
-            if (newQty <= 0) {
-                cart.splice(idx, 1);
-            } else {
-                cart[idx].quantity = newQty;
-            }
-            updateCartUI();
+        if (isNaN(idx) || !cart[idx]) return;
+        const newQty = cart[idx].quantity + delta;
+        if (newQty <= 0) {
+            cart.splice(idx, 1);
+        } else {
+            cart[idx].quantity = newQty;
         }
+        updateCartUI();
     }
-    
+
     function removeHandler(e) {
         const btn = e.currentTarget;
         const idx = parseInt(btn.getAttribute('data-idx'));
@@ -547,59 +587,46 @@
             updateCartUI();
         }
     }
-    
-    // WhatsApp order generation
-    function generateOrderMessage() {
-        if (cart.length === 0) return null;
-        let message = "🍽️ *Mzansi Delights Order*%0A";
+
+    function generateWhatsAppOrder() {
+        if (cart.length === 0) {
+            alert("🛒 Your cart is empty! Please add some delicious items before ordering.");
+            return null;
+        }
+        let message = "🍽️ *MZANSI DELIGHTS ORDER* 🍽️%0A";
         let orderDetails = "";
         let grandTotal = 0;
         cart.forEach(item => {
             const itemTotal = item.price * item.quantity;
             grandTotal += itemTotal;
-            orderDetails += `• ${item.quantity} x ${item.name} = R${itemTotal}%0A`;
+            orderDetails += `• ${item.quantity}x ${item.name} = R${itemTotal}%0A`;
         });
         message += orderDetails;
-        message += `%0A📦 *Total: R${grandTotal.toFixed(2)}*%0A`;
-        message += `📍 Pickup at Soweto (Orlando Towers) or delivery available.%0A📞 Contact +27 23 456 7890 to confirm.%0A🙏 Thank you!`;
+        message += `%0A📦 *TOTAL: R${grandTotal.toFixed(2)}*%0A`;
+        message += `📍 Pickup at Soweto (Orlando Towers) or delivery available.%0A📞 Contact: +27 23 456 7890%0A🙏 Thank you for choosing Mzansi Delights!`;
         return message;
     }
-    
+
     function sendWhatsappOrder() {
-        if (cart.length === 0) {
-            alert("🛒 Your cart is empty! Please add delicious items before ordering.");
-            return;
-        }
-        const orderText = generateOrderMessage();
+        const orderText = generateWhatsAppOrder();
         if (orderText) {
-            const whatsappUrl = `https://wa.me/27234567890?text=${orderText}`;
-            window.open(whatsappUrl, "_blank");
+            window.open(`https://wa.me/27234567890?text=${orderText}`, "_blank");
         }
     }
-    
-    // Back to main website (previous page or homepage)
+
+    // Back to homepage (index.html)
     function goBackToHome() {
-        // If we came from main site, we can use history or just replace location with main index
-        // Since it's a standalone page within same project, navigate back to the main page (assumed index.html)
-        // but we provide user a way to go back to main page.
-        window.location.href = 'index.html';  // typical main page (or you can use history.back)
-        // fallback: if index not exists, alert but for now it's fine.
-        setTimeout(() => {
-            // if fails, just show note
-        }, 100);
+        window.location.href = 'index.html';
     }
-    
-    // Initialize & event bindings
+
+    // Initialize page
     document.addEventListener('DOMContentLoaded', () => {
         renderMenu();
-        const checkoutBtn = document.getElementById('checkoutBtn');
+        const checkoutBtn = document.getElementById('whatsappCheckoutBtn');
         if (checkoutBtn) checkoutBtn.addEventListener('click', sendWhatsappOrder);
         const backBtn = document.getElementById('backToHomeBtn');
         if (backBtn) backBtn.addEventListener('click', goBackToHome);
     });
-    
-    // optional: catch if back button replaced
-    window.goBackToHome = goBackToHome;
 </script>
 </body>
 </html>
